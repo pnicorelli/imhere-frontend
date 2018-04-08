@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+   .header > a {
+      display: none;
+   }
+}
+
+.pageContent{
+  margin-top:8%;
+}

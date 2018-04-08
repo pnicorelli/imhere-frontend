@@ -1,0 +1,8 @@
+.navTitle{
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 7px;
+}
+.navTitle >small{
+  font-size: .6em;
+}
