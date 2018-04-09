@@ -7,3 +7,7 @@
 .pageContent{
   margin-top:8%;
 }
+
+.likeHref:hover{
+  cursor: pointer;
+}

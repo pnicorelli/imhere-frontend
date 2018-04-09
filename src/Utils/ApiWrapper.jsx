@@ -149,7 +149,6 @@ class ApiWrapper{
       });
       const res = await axiosInstance.get();
       if(res.status === 200){
-        console.log(res.data);
         result = res.data.reports;
       }
     } catch(err) {

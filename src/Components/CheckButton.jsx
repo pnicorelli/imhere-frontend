@@ -35,7 +35,7 @@ class CheckButton extends React.Component {
 
       {
         this.state.status === 'in'
-        ? <Button bsStyle="alert" bsSize="large" onClick={this.checkOut}>CheckOut</Button>
+        ? <Button bsStyle="danger" bsSize="large" onClick={this.checkOut}>CheckOut</Button>
         : <Button bsStyle="success" bsSize="large" onClick={this.checkIn}>CheckIn</Button>
       }
 
