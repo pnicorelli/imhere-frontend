@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom'
-import Spinner from 'react-spinkit';
+import CustomSpinner from '../Components/CustomSpinner';
 import Storage from '../Utils/Storage';
 import ApiWrapper from '../Utils/ApiWrapper';
 
@@ -22,7 +22,6 @@ class SignUp extends React.Component {
     if( backendStatus ){
       let user = await api.getProfile();
       if( user ){
-        console.log(user);
         Storage.setUser(user);
         this.props.history.push('/');
         return;
@@ -37,10 +36,10 @@ class SignUp extends React.Component {
     return <div>
       {
         this.status
-          ? <div><Spinner name='wordpress' color='green'/>...checking the token</div>
+          ? <CustomSpinner message='checking the token' />
           : <div>
-            Invalid Token, please retry to <Link to="/login">login</Link>
-        </div>
+              Invalid Token, please retry to <Link to="/login">login</Link>
+            </div>
       }
     </div>
   }

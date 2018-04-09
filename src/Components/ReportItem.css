@@ -1,0 +1,27 @@
+.reportItem{
+  border: 1px solid #eee;
+}
+
+.reportItem > .item {
+  padding-top:15px;
+  margin-bottom: 5px;
+  background-color: burlywood;
+  width:100%;
+  border-bottom: 1px solid #aaa;
+  float:left;
+}
+.reportItem > .item > .name{
+  padding-top:10px;
+  width: 40%; float:left;
+}
+.reportItem > .item > .hours{
+    padding-top:10px;
+  width: 30%; float:left;
+}
+.reportItem > .item > .btn{
+  width: 30%; float:left;
+}
+
+.reportItem > .tbl {
+  background-color: #eaeaea;
+}

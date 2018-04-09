@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col, Button, Form, FormGroup, FormControl} from 'react-bootstrap';
-import Spinner from 'react-spinkit';
+import CustomSpinner from '../Components/CustomSpinner';
 import ApiWrapper from '../Utils/ApiWrapper';
 
 class Login extends React.Component {
@@ -66,7 +66,7 @@ class Login extends React.Component {
                     <Col className="text-center">
                       {
                         this.state.mailSending
-                        ? <Spinner name='wordpress' color='green'/>
+                        ? <CustomSpinner message='sending'/>
                         : <Button bsStyle="info" onClick={this.signin} disabled={this.state.validEmail!=='success'}>Sign-In</Button>
                       }
                     </Col>

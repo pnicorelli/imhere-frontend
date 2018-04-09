@@ -1,0 +1,24 @@
+.peopleBadge {
+  border: 1px solid #aaa;
+  background-color: cadetblue;
+  display: inline-block;
+  width:90%;
+  height: 80px;
+}
+
+.peopleBadge > .icon {
+  border:1px solid white;
+  height: 78px;
+}
+.peopleBadge > .icon > .hfa {
+  margin-top:10px;
+}
+.peopleBadge > .name {
+    border:1px solid white;
+  height: 78px;
+  padding-top:30px;
+  color: white;
+  font-size: 100%;
+  vertical-align: bottom;
+  font-weight: bold;
+}

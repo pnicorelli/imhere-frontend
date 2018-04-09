@@ -44,6 +44,25 @@ class ApiWrapper{
     return user;
   }
 
+  async getStatus(){
+    let data = null;
+    try{
+      var axiosInstance = axios.create({
+          baseURL: this._url+'v1/status',
+          headers: {
+            'X-TOKEN': Storage.getToken()
+          }
+      });
+      const res = await axiosInstance.get();
+      if(res.status === 200){
+        data = res.data;
+      }
+    } catch(err) {
+      console.error(err);
+    }
+    return data;
+  }
+
   async login(mail){
     let result = false;
     try{
@@ -53,6 +72,85 @@ class ApiWrapper{
       const res = await axiosInstance.post();
       if(res.status === 201){
         result = true;
+      }
+    } catch(err) {
+      console.error(err);
+    }
+    return result;
+  }
+
+  async checkIn(){
+    let result = false;
+    try{
+      var axiosInstance = axios.create({
+          baseURL: this._url+'v1/checkin',
+          headers: {
+            'X-TOKEN': Storage.getToken()
+          }
+      });
+      const res = await axiosInstance.post();
+      if(res.status === 201){
+        result = true;
+      }
+    } catch(err) {
+      console.error(err);
+    }
+    return result;
+  }
+
+  async checkOut(){
+    let result = false;
+    try{
+      var axiosInstance = axios.create({
+          baseURL: this._url+'v1/checkout',
+          headers: {
+            'X-TOKEN': Storage.getToken()
+          }
+      });
+      const res = await axiosInstance.post();
+      if(res.status === 201){
+        result = true;
+      }
+    } catch(err) {
+      console.error(err);
+    }
+    return result;
+  }
+
+  async getWho(){
+    let result = null;
+    try{
+      var axiosInstance = axios.create({
+          baseURL: this._url+'v1/who',
+          headers: {
+            'X-TOKEN': Storage.getToken()
+          }
+      });
+      const res = await axiosInstance.get();
+      if(res.status === 200){
+        result = res.data.colleagues;
+      }
+    } catch(err) {
+      console.error(err);
+    }
+    return result;
+  }
+
+  async getMonthlyReports(year, month){
+    month = ('0'+month).slice(-2);
+    let period = year + '-' + month;
+    let result = null;
+    try{
+      var axiosInstance = axios.create({
+          baseURL: this._url+'v1/report/monthly/'+period,
+          headers: {
+            'X-TOKEN': Storage.getToken()
+          }
+      });
+      const res = await axiosInstance.get();
+      if(res.status === 200){
+        console.log(res.data);
+        result = res.data.reports;
       }
     } catch(err) {
       console.error(err);
