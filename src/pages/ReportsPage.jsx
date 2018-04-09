@@ -43,6 +43,9 @@ class ReportsPage extends React.Component {
   }
 
   async loadReports(){
+    this.setState({
+      reports: null
+    })
     const api = new ApiWrapper;
     let reports = await api.getMonthlyReports(this.state.year, this.state.month);
     this.setState({
