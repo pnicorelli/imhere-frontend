@@ -52,7 +52,11 @@ class ReportItem extends React.Component {
         </div>
         <div className="btn">
           <Button onClick={() => this.setState({ open: !this.state.open })}>
-            click
+            {
+              this.state.open
+                ? <div>Close</div>
+                : <div>Open</div>
+            }
           </Button>
         </div>
       </div>
